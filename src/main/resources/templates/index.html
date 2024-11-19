@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Quote Generator</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .quote {
+            font-size: 24px;
+            font-style: italic;
+            margin: 20px;
+        }
+        .author {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .form-container {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to the Creative Quote Generator!</h1>
+<div class="quote">
+  <p>"<span th:text="${quote.text}">Loading quote...</span>"</p>
+</div>
+<div class="author">
+  <p>- <span th:text="${quote.author}">Loading author...</span></p>
+</div>
+
+<div class="form-container">
+  <h2>Submit Your Own Quote</h2>
+  <form action="/add-quote" method="post">
+    <input type="text" name="text" placeholder="Enter your quote" required />
+    <input type="text" name="author" placeholder="Author" required />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>
